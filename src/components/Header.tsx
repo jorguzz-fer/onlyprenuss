@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { List, X, Phone } from "@phosphor-icons/react";
+import { Menu, X, Phone } from "lucide-react";
 const logoDark = "/logo/logo-dark.png";
 const logoLight = "/logo/logo-light.png";
 
@@ -101,7 +101,7 @@ const Header = () => {
                   className="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-orange">
-                    <Phone size={16} className="text-primary-foreground" />
+                    <Phone className="w-4 h-4 text-primary-foreground" />
                   </span>
                   <span className="font-sans text-sm font-semibold">
                     Entrar
@@ -125,9 +125,9 @@ const Header = () => {
               }`}
             >
               {mobileOpen ? (
-                <X size={24} />
+                <X className="w-6 h-6" />
               ) : (
-                <List size={24} />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>

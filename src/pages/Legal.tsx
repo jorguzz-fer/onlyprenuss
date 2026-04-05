@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck } from "@phosphor-icons/react";
+import { ShieldCheck } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 
 const sections = [
@@ -174,7 +174,7 @@ const Legal = () => {
         <div className="container relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-6">
-              <ShieldCheck size={32} weight="duotone" className="text-primary" />
+              <ShieldCheck className="w-[32px] h-[32px] text-primary" />
             </div>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
               Legal &{" "}

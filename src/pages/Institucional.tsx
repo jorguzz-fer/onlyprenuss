@@ -5,9 +5,9 @@ import {
   Star,
   Lightbulb,
   Globe,
-  CheckCircle,
+  CheckCircle2,
   ArrowUpRight,
-} from "@phosphor-icons/react";
+} from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 
 const values = [
@@ -168,9 +168,7 @@ const Institucional = () => {
               >
                 <div className="w-16 h-16 rounded-2xl bg-orange/10 flex items-center justify-center mb-6 mx-auto">
                   <item.icon
-                    size={32}
-                    weight="duotone"
-                    className="text-primary"
+                    className="w-[32px] h-[32px] text-primary"
                   />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-4">
@@ -211,9 +209,7 @@ const Institucional = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Lightbulb
-                  size={28}
-                  weight="duotone"
-                  className="text-primary"
+                  className="w-[28px] h-[28px] text-primary"
                 />
                 <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
                   Tecnologia & Inovação
@@ -239,10 +235,8 @@ const Institucional = () => {
                     transition={{ delay: i * 0.05 }}
                     className="flex items-start gap-3 font-sans text-base text-foreground/80"
                   >
-                    <CheckCircle
-                      size={20}
-                      weight="fill"
-                      className="text-primary flex-shrink-0 mt-0.5"
+                    <CheckCircle2
+                      className="w-[20px] h-[20px] text-primary flex-shrink-0 mt-0.5"
                     />
                     {feature}
                   </motion.li>
@@ -303,9 +297,7 @@ const Institucional = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Globe
-                  size={28}
-                  weight="duotone"
-                  className="text-primary"
+                  className="w-[28px] h-[28px] text-primary"
                 />
                 <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
                   Onde Estamos
@@ -374,7 +366,7 @@ const Institucional = () => {
               className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"
             >
               Começar Agora
-              <ArrowUpRight size={20} />
+              <ArrowUpRight className="w-[20px] h-[20px]" />
             </a>
           </motion.div>
         </div>

@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 import {
-  CheckCircle,
+  CheckCircle2,
   ArrowUpRight,
-  WhatsappLogo,
+  MessageCircle,
   Users,
-  ChartLineUp,
+  TrendingUp,
   ShieldCheck,
   Heart,
   Tag,
-  FilmSlate,
-  Buildings,
-} from "@phosphor-icons/react";
+  Film,
+  Building2,
+} from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 
 const benefits = [
@@ -21,7 +21,7 @@ const benefits = [
       "Ofereça um benefício diferenciado que valoriza seus colaboradores e reduz o turnover da empresa.",
   },
   {
-    icon: ChartLineUp,
+    icon: TrendingUp,
     title: "Redução de Custos",
     description:
       "Planos a partir de R$19/mês por colaborador. Muito mais acessível que planos de saúde tradicionais.",
@@ -33,7 +33,7 @@ const benefits = [
       "Colaboradores com acesso a saúde produzem mais e faltam menos. Cuide de quem faz sua empresa crescer.",
   },
   {
-    icon: Buildings,
+    icon: Building2,
     title: "Gestão Simplificada",
     description:
       "Plataforma 100% digital para gerenciar os benefícios da equipe. Sem burocracia, sem papelada.",
@@ -72,7 +72,7 @@ const includedServices = [
     description: "Cashback e descontos exclusivos em milhares de lojas.",
   },
   {
-    icon: FilmSlate,
+    icon: Film,
     title: "WOW+ Cine",
     description: "Entretenimento para os colaboradores e suas famílias.",
   },
@@ -113,7 +113,7 @@ const ParaEmpresas = () => {
                   className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
                 >
                   Fale com um Consultor
-                  <ArrowUpRight size={20} />
+                  <ArrowUpRight className="w-[20px] h-[20px]" />
                 </a>
                 <a
                   href="#plano"
@@ -169,9 +169,7 @@ const ParaEmpresas = () => {
               >
                 <div className="w-14 h-14 rounded-xl bg-orange/10 flex items-center justify-center mb-6">
                   <benefit.icon
-                    size={30}
-                    weight="duotone"
-                    className="text-primary"
+                    className="w-[30px] h-[30px] text-primary"
                   />
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-3">
@@ -256,9 +254,7 @@ const ParaEmpresas = () => {
               >
                 <div className="w-14 h-14 rounded-xl bg-orange/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                   <service.icon
-                    size={30}
-                    weight="duotone"
-                    className="text-primary group-hover:text-primary-foreground transition-colors"
+                    className="w-[30px] h-[30px] text-primary group-hover:text-primary-foreground transition-colors"
                   />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-3">
@@ -315,10 +311,8 @@ const ParaEmpresas = () => {
                     key={feature}
                     className="flex items-start gap-3 font-sans text-base text-secondary-foreground/80"
                   >
-                    <CheckCircle
-                      size={20}
-                      weight="fill"
-                      className="text-primary flex-shrink-0 mt-0.5"
+                    <CheckCircle2
+                      className="w-[20px] h-[20px] text-primary flex-shrink-0 mt-0.5"
                     />
                     {feature}
                   </li>
@@ -329,7 +323,7 @@ const ParaEmpresas = () => {
                 href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
               >
-                <WhatsappLogo size={20} weight="fill" />
+                <MessageCircle className="w-[20px] h-[20px]" />
                 Fale com um Consultor
               </a>
             </motion.div>
@@ -376,7 +370,7 @@ const ParaEmpresas = () => {
               href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
               className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"
             >
-              <WhatsappLogo size={20} weight="fill" />
+              <MessageCircle className="w-[20px] h-[20px]" />
               Fale com um Consultor
             </a>
           </motion.div>

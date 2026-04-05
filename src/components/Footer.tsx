@@ -2,19 +2,19 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  InstagramLogo,
-  FacebookLogo,
-  LinkedinLogo,
-  YoutubeLogo,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Youtube,
   Heart,
-  CaretDown,
+  ChevronDown,
   Phone,
-  EnvelopeSimple,
+  Mail,
   MapPin,
   ArrowUpRight,
   Headset,
-  WhatsappLogo,
-} from "@phosphor-icons/react";
+  MessageCircle,
+} from "lucide-react";
 
 const logo = "/logo/logo-light.png";
 
@@ -120,10 +120,10 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { Icon: InstagramLogo, href: "#", label: "Instagram" },
-  { Icon: FacebookLogo, href: "#", label: "Facebook" },
-  { Icon: LinkedinLogo, href: "#", label: "LinkedIn" },
-  { Icon: YoutubeLogo, href: "#", label: "YouTube" },
+  { Icon: Instagram, href: "#", label: "Instagram" },
+  { Icon: Facebook, href: "#", label: "Facebook" },
+  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+  { Icon: Youtube, href: "#", label: "YouTube" },
 ];
 
 const Footer = () => {
@@ -175,13 +175,13 @@ const Footer = () => {
               className="inline-flex items-center justify-center gap-2 bg-white text-orange-dark px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-white/90 transition-all hover:scale-105 shadow-lg"
             >
               Conheça os planos
-              <ArrowUpRight size={20} />
+              <ArrowUpRight className="w-5 h-5" />
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=5511999999999"
               className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-white/10 transition-all"
             >
-              <WhatsappLogo size={20} weight="fill" />
+              <MessageCircle className="w-5 h-5" />
               Fale conosco
             </a>
           </motion.div>
@@ -238,7 +238,7 @@ const Footer = () => {
                     aria-label={label}
                     className="group w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
                   >
-                    <Icon size={18} weight="fill" className="group-hover:scale-110 transition-transform" />
+                    <Icon className="w-[18px] h-[18px] group-hover:scale-110 transition-transform" />
                   </a>
                 ))}
               </div>
@@ -271,7 +271,7 @@ const Footer = () => {
                   className="group p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <card.icon size={22} weight="duotone" className="text-primary" />
+                    <card.icon className="w-[22px] h-[22px] text-primary" />
                   </div>
                   <p className="font-sans text-xs text-white/40 uppercase tracking-wider mb-1">
                     {card.title}
@@ -336,9 +336,8 @@ const Footer = () => {
                     <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
                     {section.title}
                   </h4>
-                  <CaretDown
-                    size={16}
-                    className={`text-white/40 transition-transform duration-300 ${
+                  <ChevronDown
+                    className={`w-4 h-4 text-white/40 transition-transform duration-300 ${
                       expandedSection === section.title ? "rotate-180" : ""
                     }`}
                   />
@@ -401,7 +400,7 @@ const Footer = () => {
               </p>
               <p className="font-sans text-[11px] text-white/20 flex items-center gap-1">
                 Feito com{" "}
-                <Heart size={14} weight="fill" className="text-primary" /> no
+                <Heart className="w-3.5 h-3.5 text-primary fill-primary" /> no
                 Brasil
               </p>
             </div>

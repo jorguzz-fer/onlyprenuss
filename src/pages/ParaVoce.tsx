@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import {
-  CheckCircle,
+  CheckCircle2,
   Heart,
   Tag,
-  FilmSlate,
+  Film,
   ArrowUpRight,
-  WhatsappLogo,
-} from "@phosphor-icons/react";
+  MessageCircle,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -35,7 +35,7 @@ const services = [
     link: "/servicos#clube",
   },
   {
-    icon: FilmSlate,
+    icon: Film,
     title: "WOW+ Cine",
     description: "Filmes e séries para toda a família, direto no seu app.",
     link: "/servicos#cine",
@@ -114,13 +114,13 @@ const ParaVoce = () => {
                   className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
                 >
                   Assine Agora
-                  <ArrowUpRight size={20} />
+                  <ArrowUpRight className="w-[20px] h-[20px]" />
                 </a>
                 <a
                   href="https://api.whatsapp.com/send?phone=5511999999999"
                   className="inline-flex items-center justify-center gap-2 border-2 border-white/20 text-secondary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-white/5 transition-colors"
                 >
-                  <WhatsappLogo size={20} weight="fill" />
+                  <MessageCircle className="w-[20px] h-[20px]" />
                   Tire suas dúvidas
                 </a>
               </div>
@@ -209,9 +209,7 @@ const ParaVoce = () => {
               >
                 <div className="w-14 h-14 rounded-xl bg-orange/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                   <service.icon
-                    size={30}
-                    weight="duotone"
-                    className="text-primary group-hover:text-primary-foreground transition-colors"
+                    className="w-[30px] h-[30px] text-primary group-hover:text-primary-foreground transition-colors"
                   />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-3">
@@ -268,10 +266,8 @@ const ParaVoce = () => {
                     key={feature}
                     className="flex items-start gap-3 font-sans text-base text-secondary-foreground/80"
                   >
-                    <CheckCircle
-                      size={20}
-                      weight="fill"
-                      className="text-primary flex-shrink-0 mt-0.5"
+                    <CheckCircle2
+                      className="w-[20px] h-[20px] text-primary flex-shrink-0 mt-0.5"
                     />
                     {feature}
                   </li>
@@ -294,7 +290,7 @@ const ParaVoce = () => {
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
               >
                 Assinar Plano
-                <ArrowUpRight size={20} />
+                <ArrowUpRight className="w-[20px] h-[20px]" />
               </a>
             </motion.div>
 
@@ -341,10 +337,8 @@ const ParaVoce = () => {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-center gap-3 bg-navy-light/50 border border-secondary-foreground/10 px-6 py-4 rounded-xl backdrop-blur-sm"
               >
-                <CheckCircle
-                  size={24}
-                  weight="fill"
-                  className="text-orange flex-shrink-0"
+                <CheckCircle2
+                  className="w-[24px] h-[24px] text-orange flex-shrink-0"
                 />
                 <span className="font-sans text-base md:text-lg font-medium">
                   {reason}

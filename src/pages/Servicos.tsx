@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Tag, FilmSlate, CheckCircle, ArrowUpRight } from "@phosphor-icons/react";
+import { Heart, Tag, Film, CheckCircle2, ArrowUpRight } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 
 const services = [
@@ -43,7 +43,7 @@ const services = [
   },
   {
     id: "cine",
-    icon: FilmSlate,
+    icon: Film,
     title: "WOW+ Cine",
     subtitle: "Entretenimento para toda a família",
     description:
@@ -110,9 +110,7 @@ const Servicos = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 rounded-xl bg-orange/10 flex items-center justify-center">
                     <service.icon
-                      size={30}
-                      weight="duotone"
-                      className="text-primary"
+                      className="w-7 h-7 text-primary"
                     />
                   </div>
                   <div>
@@ -139,10 +137,8 @@ const Servicos = () => {
                       transition={{ delay: i * 0.05 }}
                       className="flex items-start gap-3 font-sans text-base text-foreground/80"
                     >
-                      <CheckCircle
-                        size={20}
-                        weight="fill"
-                        className="text-primary flex-shrink-0 mt-0.5"
+                      <CheckCircle2
+                        className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
                       />
                       {feature}
                     </motion.li>
@@ -160,7 +156,7 @@ const Servicos = () => {
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
                 >
                   Assinar Plano
-                  <ArrowUpRight size={20} />
+                  <ArrowUpRight className="w-5 h-5" />
                 </a>
               </motion.div>
 
