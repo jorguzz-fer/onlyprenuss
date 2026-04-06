@@ -117,7 +117,7 @@ const ParaVoce = () => {
                   <ArrowUpRight className="w-[20px] h-[20px]" />
                 </a>
                 <a
-                  href="https://api.whatsapp.com/send?phone=5511999999999"
+                  href="https://api.whatsapp.com/send?phone=5511978369030"
                   className="inline-flex items-center justify-center gap-2 border-2 border-white/20 text-secondary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-white/5 transition-colors"
                 >
                   <MessageCircle className="w-[20px] h-[20px]" />

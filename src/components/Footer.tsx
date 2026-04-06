@@ -62,9 +62,9 @@ const footerSections = [
   {
     title: "Atendimento e Suporte",
     links: [
-      { label: "Fale com um consultor", href: "https://api.whatsapp.com/send?phone=5511999999999" },
+      { label: "Fale com um consultor", href: "https://api.whatsapp.com/send?phone=5511978369030" },
       { label: "Central de atendimento 24h", href: "tel:08001234567" },
-      { label: "WhatsApp", href: "https://api.whatsapp.com/send?phone=5511999999999" },
+      { label: "WhatsApp", href: "https://api.whatsapp.com/send?phone=5511978369030" },
       { label: "Área do cliente", href: "https://app.wowmais.com.br/" },
       { label: "Abrir chamado", href: "#" },
     ],
@@ -178,7 +178,7 @@ const Footer = () => {
               <ArrowUpRight className="w-5 h-5" />
             </a>
             <a
-              href="https://api.whatsapp.com/send?phone=5511999999999"
+              href="https://api.whatsapp.com/send?phone=5511978369030"
               className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-white/10 transition-all"
             >
               <MessageCircle className="w-5 h-5" />

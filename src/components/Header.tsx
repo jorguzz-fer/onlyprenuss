@@ -97,7 +97,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-4">
               {scrolled ? (
                 <a
-                  href="tel:+5511999999999"
+                  href="tel:+5511978369030"
                   className="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-orange">

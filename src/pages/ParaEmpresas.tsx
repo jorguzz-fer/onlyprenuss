@@ -109,7 +109,7 @@ const ParaEmpresas = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <a
-                  href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
+                  href="https://api.whatsapp.com/send?phone=5511978369030&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
                   className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
                 >
                   Fale com um Consultor
@@ -320,7 +320,7 @@ const ParaEmpresas = () => {
               </ul>
 
               <a
-                href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
+                href="https://api.whatsapp.com/send?phone=5511978369030&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
               >
                 <MessageCircle className="w-[20px] h-[20px]" />
@@ -367,7 +367,7 @@ const ParaEmpresas = () => {
               benefícios da sua empresa.
             </p>
             <a
-              href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
+              href="https://api.whatsapp.com/send?phone=5511978369030&text=Olá! Gostaria de conhecer os planos empresariais WOW+"
               className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"
             >
               <MessageCircle className="w-[20px] h-[20px]" />

@@ -17,7 +17,7 @@ const contactCards = [
     title: "WhatsApp",
     info: "Fale agora",
     description: "Atendimento rapido e direto",
-    link: "https://api.whatsapp.com/send?phone=5511999999999",
+    link: "https://api.whatsapp.com/send?phone=5511978369030",
     cta: "Iniciar conversa",
   },
   {
@@ -344,7 +344,7 @@ const Contato = () => {
               Fale diretamente com um consultor pelo WhatsApp.
             </p>
             <a
-              href="https://api.whatsapp.com/send?phone=5511999999999"
+              href="https://api.whatsapp.com/send?phone=5511978369030"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"
