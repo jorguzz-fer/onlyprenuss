@@ -37,7 +37,7 @@ const footerSections = [
       { label: "Empresarial", href: "/para-empresas#plano" },
       { label: "Preços e benefícios", href: "/para-voce" },
       { label: "Como contratar", href: "/para-voce" },
-      { label: "Formas de pagamento", href: "#" },
+      { label: "Formas de pagamento", href: "/para-voce" },
       { label: "Cashback WOW+", href: "/servicos#clube" },
     ],
   },
@@ -52,11 +52,11 @@ const footerSections = [
   {
     title: "Ganhe com a WOW+",
     links: [
-      { label: "Seja um consultor", href: "#" },
-      { label: "Renda recorrente", href: "#" },
-      { label: "Plano de carreira", href: "#" },
-      { label: "Treinamentos (10 Passos WOW+)", href: "#" },
-      { label: "Área do consultor", href: "#" },
+      { label: "Seja um consultor", href: "/consultor" },
+      { label: "Renda recorrente", href: "/consultor" },
+      { label: "Plano de carreira", href: "/consultor" },
+      { label: "Treinamentos (10 Passos WOW+)", href: "/consultor" },
+      { label: "Área do consultor", href: "https://app.wowmais.com.br/" },
     ],
   },
   {
@@ -66,17 +66,17 @@ const footerSections = [
       { label: "Central de atendimento 24h", href: "tel:08001234567" },
       { label: "WhatsApp", href: "https://api.whatsapp.com/send?phone=5511978369030" },
       { label: "Área do cliente", href: "https://app.wowmais.com.br/" },
-      { label: "Abrir chamado", href: "#" },
+      { label: "Abrir chamado", href: "/contato" },
     ],
   },
   {
     title: "Conteúdo & Educação",
     links: [
-      { label: "Blog WOW+", href: "#" },
-      { label: "Dicas de saúde", href: "#" },
-      { label: "Qualidade de vida", href: "#" },
-      { label: "Educação financeira", href: "#" },
-      { label: "Vídeos explicativos", href: "#" },
+      { label: "Blog WOW+", href: "/blog" },
+      { label: "Dicas de saúde", href: "/blog" },
+      { label: "Qualidade de vida", href: "/blog" },
+      { label: "Educação financeira", href: "/blog" },
+      { label: "NR-1 e saúde mental", href: "/nr1" },
     ],
   },
   {
@@ -105,18 +105,19 @@ const footerSections = [
     links: [
       { label: "Soluções para empresas", href: "/para-empresas" },
       { label: "Benefício corporativo", href: "/para-empresas" },
+      { label: "NR-1 — Adequação", href: "/nr1" },
       { label: "Seja parceiro WOW+", href: "/para-empresas" },
-      { label: "Indique empresas", href: "/para-empresas" },
+      { label: "Indique empresas", href: "/contato" },
     ],
   },
 ];
 
 const quickLinks = [
   { label: "Login", href: "https://app.wowmais.com.br/" },
-  { label: "Ativar plano", href: "#" },
-  { label: "Baixar app", href: "#" },
-  { label: "Segunda via boleto", href: "#" },
-  { label: "Atualizar cadastro", href: "#" },
+  { label: "Ativar plano", href: "https://app.wowmais.com.br/" },
+  { label: "Baixar app", href: "https://app.wowmais.com.br/" },
+  { label: "Segunda via boleto", href: "https://app.wowmais.com.br/" },
+  { label: "Atualizar cadastro", href: "https://app.wowmais.com.br/" },
 ];
 
 const socialLinks = [
