@@ -26,7 +26,7 @@ const allPosts = [
     date: "02 Abr 2026",
     readTime: "5 min",
     author: "Equipe WOW+",
-    image: "/images/blog/telemedicina.jpg",
+    image: "/images/5.webp",
     content: [
       {
         type: "paragraph",
@@ -94,7 +94,7 @@ const allPosts = [
     date: "28 Mar 2026",
     readTime: "4 min",
     author: "Equipe WOW+",
-    image: "/images/blog/qualidade-vida.jpg",
+    image: "/images/7.jpg",
     content: [
       {
         type: "paragraph",
@@ -155,7 +155,7 @@ const allPosts = [
     date: "25 Mar 2026",
     readTime: "6 min",
     author: "Equipe WOW+",
-    image: "/images/blog/renda-extra.jpg",
+    image: "/images/4.jpg",
     content: [
       {
         type: "paragraph",
@@ -210,7 +210,7 @@ const allPosts = [
     date: "20 Mar 2026",
     readTime: "7 min",
     author: "Equipe WOW+",
-    image: "/images/blog/nr1-saude-mental.jpg",
+    image: "/images/12.jpg",
     content: [
       {
         type: "paragraph",
@@ -260,7 +260,7 @@ const allPosts = [
     date: "15 Mar 2026",
     readTime: "3 min",
     author: "Equipe WOW+",
-    image: "/images/blog/desconto-medicamentos.jpg",
+    image: "/images/14.jpg",
     content: [
       {
         type: "paragraph",
@@ -302,7 +302,7 @@ const allPosts = [
     date: "10 Mar 2026",
     readTime: "4 min",
     author: "Equipe WOW+",
-    image: "/images/blog/wow-cine.jpg",
+    image: "/images/8.jpg",
     content: [
       {
         type: "paragraph",
@@ -438,7 +438,7 @@ const BlogPost = () => {
           <img
             src={post.image}
             alt={post.title}
-            className="w-full aspect-[21/9] object-cover"
+            className="w-full aspect-[16/9] object-cover"
           />
         </motion.div>
       </div>

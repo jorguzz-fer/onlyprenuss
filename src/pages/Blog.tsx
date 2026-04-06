@@ -26,7 +26,7 @@ const posts = [
     category: "Saude",
     date: "02 Abr 2026",
     readTime: "5 min",
-    image: "/images/blog/telemedicina.jpg",
+    image: "/images/5.webp",
     featured: true,
   },
   {
@@ -37,7 +37,7 @@ const posts = [
     category: "Qualidade de Vida",
     date: "28 Mar 2026",
     readTime: "4 min",
-    image: "/images/blog/qualidade-vida.jpg",
+    image: "/images/7.jpg",
     featured: false,
   },
   {
@@ -48,7 +48,7 @@ const posts = [
     category: "Educacao Financeira",
     date: "25 Mar 2026",
     readTime: "6 min",
-    image: "/images/blog/renda-extra.jpg",
+    image: "/images/4.jpg",
     featured: false,
   },
   {
@@ -59,7 +59,7 @@ const posts = [
     category: "Saude",
     date: "20 Mar 2026",
     readTime: "7 min",
-    image: "/images/blog/nr1-saude-mental.jpg",
+    image: "/images/12.jpg",
     featured: false,
   },
   {
@@ -70,7 +70,7 @@ const posts = [
     category: "Saude",
     date: "15 Mar 2026",
     readTime: "3 min",
-    image: "/images/blog/desconto-medicamentos.jpg",
+    image: "/images/14.jpg",
     featured: false,
   },
   {
@@ -81,7 +81,7 @@ const posts = [
     category: "Novidades WOW+",
     date: "10 Mar 2026",
     readTime: "4 min",
-    image: "/images/blog/wow-cine.jpg",
+    image: "/images/8.jpg",
     featured: false,
   },
 ];
