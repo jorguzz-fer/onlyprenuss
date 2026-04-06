@@ -10,6 +10,7 @@ import ParaEmpresas from "./pages/ParaEmpresas.tsx";
 import Institucional from "./pages/Institucional.tsx";
 import Legal from "./pages/Legal.tsx";
 import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import Contato from "./pages/Contato.tsx";
 import Consultor from "./pages/Consultor.tsx";
 import NR1 from "./pages/NR1.tsx";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/institucional" element={<Institucional />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/consultor" element={<Consultor />} />
           <Route path="/nr1" element={<NR1 />} />

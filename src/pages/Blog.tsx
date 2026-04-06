@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
   Clock,
@@ -18,63 +19,69 @@ const categories = [
 
 const posts = [
   {
+    slug: "telemedicina-transformando-cuidado-saude",
     title: "Como a telemedicina pode transformar o cuidado com a sua saude",
     excerpt:
       "Descubra como consultas online 24h estao revolucionando o acesso a saude no Brasil e como a WOW+ torna isso acessivel para todas as familias.",
     category: "Saude",
     date: "02 Abr 2026",
     readTime: "5 min",
-    image: "/images/5.webp",
+    image: "/images/blog/telemedicina.jpg",
     featured: true,
   },
   {
+    slug: "habitos-melhorar-qualidade-vida",
     title: "5 habitos simples para melhorar sua qualidade de vida",
     excerpt:
       "Pequenas mudancas na rotina podem trazer grandes resultados para sua saude fisica e mental. Confira nossas dicas praticas.",
     category: "Qualidade de Vida",
     date: "28 Mar 2026",
     readTime: "4 min",
-    image: "/images/7.jpg",
+    image: "/images/blog/qualidade-vida.jpg",
     featured: false,
   },
   {
+    slug: "renda-extra-wow-mais",
     title: "Renda extra: como a WOW+ pode ajudar voce a ganhar mais",
     excerpt:
       "Conheca o programa de consultores WOW+ e descubra como gerar renda recorrente ajudando outras pessoas a cuidarem da saude.",
     category: "Educacao Financeira",
     date: "25 Mar 2026",
     readTime: "6 min",
-    image: "/images/4.jpg",
+    image: "/images/blog/renda-extra.jpg",
     featured: false,
   },
   {
+    slug: "nr1-saude-mental-empresas",
     title: "NR-1 e saude mental: o que muda para as empresas em 2026",
     excerpt:
       "Entenda as novas exigencias da NR-1 sobre saude mental no trabalho e como a WOW+ ajuda empresas a se adequarem.",
     category: "Saude",
     date: "20 Mar 2026",
     readTime: "7 min",
-    image: "/images/12.jpg",
+    image: "/images/blog/nr1-saude-mental.jpg",
     featured: false,
   },
   {
+    slug: "desconto-medicamentos-economizar",
     title: "Desconto em medicamentos: como economizar ate 90%",
     excerpt:
       "Saiba como usar a rede de farmacias credenciadas WOW+ para pagar muito menos nos seus medicamentos do dia a dia.",
     category: "Saude",
     date: "15 Mar 2026",
     readTime: "3 min",
-    image: "/images/14.jpg",
+    image: "/images/blog/desconto-medicamentos.jpg",
     featured: false,
   },
   {
+    slug: "wow-cine-entretenimento-familia",
     title: "WOW+ Cine: entretenimento para toda a familia",
     excerpt:
       "Alem de saude, a WOW+ tambem cuida do lazer da sua familia. Conheca o catalogo de filmes e series inclusos no seu plano.",
     category: "Novidades WOW+",
     date: "10 Mar 2026",
     readTime: "4 min",
-    image: "/images/8.jpg",
+    image: "/images/blog/wow-cine.jpg",
     featured: false,
   },
 ];
@@ -119,11 +126,13 @@ const Blog = () => {
       {featuredPost && activeCategory === "Todos" && (
         <section className="py-16">
           <div className="container">
-            <motion.a
-              href="#"
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+            >
+            <Link
+              to={`/blog/${featuredPost.slug}`}
               className="group grid lg:grid-cols-2 gap-8 items-center bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-border"
             >
               <div className="relative overflow-hidden">
@@ -163,7 +172,8 @@ const Blog = () => {
                   {featuredPost.date}
                 </p>
               </div>
-            </motion.a>
+            </Link>
+            </motion.div>
           </div>
         </section>
       )}
@@ -194,14 +204,16 @@ const Blog = () => {
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post, i) => (
-              <motion.a
-                key={post.title}
-                href="#"
+              <motion.div
+                key={post.slug}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border"
+              >
+              <Link
+                to={`/blog/${post.slug}`}
+                className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border block"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -236,7 +248,8 @@ const Blog = () => {
                     </span>
                   </div>
                 </div>
-              </motion.a>
+              </Link>
+              </motion.div>
             ))}
           </div>
         </div>
