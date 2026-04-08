@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Activity, Pill, Shield, Tag } from "lucide-react";
+import { Heart, Activity, Pill, Tag } from "lucide-react";
 
 const services = [
   {
@@ -37,18 +37,6 @@ const services = [
     link: "https://app.wowmais.com.br/",
   },
   {
-    icon: Shield,
-    title: "WOW+ Assistências",
-    description: "Proteção para você e sua família no dia a dia.",
-    features: [
-      "Assistência residencial",
-      "Assistência automotiva",
-      "Assistência pet",
-      "Segurança familiar"
-    ],
-    link: "https://app.wowmais.com.br/",
-  },
-  {
     icon: Tag,
     title: "WOW+ Clube",
     description: "Benefícios e cashback em milhares de lojas.",
@@ -82,7 +70,7 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => (
             <motion.a
               key={service.title}
