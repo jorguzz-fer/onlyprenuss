@@ -23,11 +23,6 @@ const faqs = [
       "Com o WOW+Clube, você recebe cashback automático em compras realizadas em mais de 10 mil estabelecimentos parceiros em todo o Brasil. O valor é creditado diretamente na sua conta.",
   },
   {
-    question: "Qual a cobertura do WOW+Assistencial?",
-    answer:
-      "O WOW+Assistencial oferece assistência emergencial 24h, incluindo serviços de chaveiro, eletricista, encanador e muito mais. Além de seguro pessoal para situações imprevistas.",
-  },
-  {
     question: "Como faço para contratar um plano?",
     answer:
       "A contratação é 100% digital. Basta acessar nosso app ou site, escolher o plano ideal e fazer seu cadastro. Em poucos minutos você já estará protegido.",
