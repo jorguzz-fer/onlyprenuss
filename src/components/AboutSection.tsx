@@ -12,7 +12,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,7 +59,7 @@ const AboutSection = () => {
               <img
                 src={aboutImage}
                 alt="Equipe WOW Mais"
-                className="w-full aspect-[4/5] md:aspect-[3/4] object-cover object-top"
+                className="w-full aspect-square object-cover object-top"
               />
             </div>
             {/* Stats overlay */}
