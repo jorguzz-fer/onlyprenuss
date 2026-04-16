@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700;1,900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,23 @@
 
 @layer base {
   :root {
+    /* Only Plenuss Brand Colors — Navy + Warm Gold */
+    --op-black: #07080E;
+    --op-black-soft: #0B0C18;
+    --op-black-card: #0F1026;
+    --op-black-card2: #0C0D1E;
+    --op-black-border: #1C1F38;
+    --op-gold: #D4952A;
+    --op-gold-light: #F0C040;
+    --op-gold-dark: #A06818;
+    --op-gold-mid: #E8A83C;
+    --op-white: #FAFAFA;
+    --op-muted: #8890B0;
+    --op-gold-gradient: linear-gradient(135deg, #C9851C 0%, #F0C040 55%, #D4952A 100%);
+    --op-gold-gradient-hover: linear-gradient(135deg, #E09A2A 0%, #FFD050 55%, #E09A2A 100%);
+    --op-glow-gold: 0 0 40px rgba(212, 149, 42, 0.25), 0 0 80px rgba(212, 149, 42, 0.1);
+    --op-glow-gold-sm: 0 0 20px rgba(212, 149, 42, 0.2);
+
     /* WOW Mais Brand Colors */
     --background: 0 0% 100%;
     --foreground: 220 25% 10%;
@@ -73,11 +90,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
   }
 }
 
