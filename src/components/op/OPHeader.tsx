@@ -44,20 +44,18 @@ export default function OPHeader() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#hero" onClick={e => handleNavClick(e, '#hero')} className="flex flex-col leading-none group">
-            <span className="font-bold tracking-tight group-hover:opacity-90 transition-opacity"
+          <a href="#hero" onClick={e => handleNavClick(e, '#hero')} className="group">
+            <img
+              src="/logo/logo-only/logo.jpg"
+              alt="Only Plenuss Consultoria"
               style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: '1.35rem',
-                background: G, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                letterSpacing: '-0.01em',
-              }}>
-              ONLY PLENUS$
-            </span>
-            <span className="text-[10px] tracking-[0.28em] uppercase"
-              style={{ fontFamily: F, color: 'rgba(212,149,42,0.45)' }}>
-              Consultoria
-            </span>
+                height: '48px',
+                width: 'auto',
+                objectFit: 'contain',
+                transition: 'opacity 0.2s ease',
+              }}
+              className="group-hover:opacity-85"
+            />
           </a>
 
           {/* Desktop Nav */}

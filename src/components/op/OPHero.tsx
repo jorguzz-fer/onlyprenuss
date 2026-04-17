@@ -16,316 +16,345 @@ export default function OPHero() {
     <section
       id="hero"
       className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: '#07080E' }}
+      style={{ background: '#06070D' }}
     >
-      {/* Deep radial glow — blue-purple center */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 90% 80% at 50% 40%, rgba(30,35,90,0.7) 0%, transparent 70%)',
-      }} />
+      {/* ── Background atmosphere ── */}
 
-      {/* Gold glow — right side behind photo */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 70% 60% at 85% 50%, rgba(212,149,42,0.12) 0%, transparent 65%)',
+      {/* Deep blue radial on left */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse 70% 80% at 15% 60%, rgba(18,28,90,0.75) 0%, transparent 65%)',
       }} />
 
       {/* Subtle grid */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: `
-          linear-gradient(rgba(212,149,42,0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(212,149,42,0.03) 1px, transparent 1px)
+          linear-gradient(rgba(212,149,42,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(212,149,42,0.025) 1px, transparent 1px)
         `,
-        backgroundSize: '80px 80px',
+        backgroundSize: '72px 72px',
       }} />
 
-      {/* Decorative swoosh — bottom left */}
-      <div className="absolute -bottom-32 -left-32 pointer-events-none" style={{
-        width: 520,
-        height: 520,
-        borderRadius: '50%',
-        border: '80px solid transparent',
-        background: 'transparent',
-        boxShadow: 'inset 0 0 0 2px rgba(212,149,42,0.12)',
-        transform: 'rotate(-25deg)',
-        filter: 'blur(1px)',
-      }} />
-      <div className="absolute -bottom-20 -left-20 pointer-events-none" style={{
-        width: 360,
-        height: 360,
-        borderRadius: '50%',
-        background: 'radial-gradient(circle at 30% 70%, rgba(212,149,42,0.10) 0%, transparent 60%)',
-      }} />
+      {/* ── RIGHT SIDE: Photo + geometric lights ── */}
+      <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none">
 
-      {/* Decorative swoosh — top right */}
-      <div className="absolute -top-40 -right-40 pointer-events-none" style={{
-        width: 600,
-        height: 600,
-        borderRadius: '50%',
-        border: '60px solid transparent',
-        boxShadow: 'inset 0 0 0 1px rgba(212,149,42,0.08)',
-        transform: 'rotate(15deg)',
-      }} />
+        {/* Golden chevron / triangle light ray — behind team */}
+        <svg
+          viewBox="0 0 600 900"
+          className="absolute inset-0 w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
+          style={{ opacity: 0.85 }}
+        >
+          <defs>
+            <linearGradient id="rayGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#C9851C" stopOpacity="0.55" />
+              <stop offset="50%" stopColor="#F0C040" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#D4952A" stopOpacity="0.05" />
+            </linearGradient>
+            <linearGradient id="rayBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1A3A8A" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#0A1850" stopOpacity="0.05" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-28 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Main golden diamond / chevron shape */}
+          <polygon
+            points="580,0 580,900 200,450"
+            fill="url(#rayGold)"
+          />
+          {/* Secondary bigger sweep */}
+          <polygon
+            points="600,0 600,900 120,450"
+            fill="url(#rayGold)"
+            opacity="0.4"
+          />
+          {/* Blue accent left edge */}
+          <polygon
+            points="320,0 120,450 320,900 200,900 0,450 200,0"
+            fill="url(#rayBlue)"
+            opacity="0.6"
+          />
+          {/* Thin gold border line */}
+          <line x1="200" y1="450" x2="600" y2="0" stroke="#F0C040" strokeWidth="1.5" opacity="0.5" filter="url(#glow)" />
+          <line x1="200" y1="450" x2="600" y2="900" stroke="#F0C040" strokeWidth="1.5" opacity="0.5" filter="url(#glow)" />
+        </svg>
 
-          {/* LEFT */}
-          <div className="flex flex-col">
-            {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-3 mb-8"
-            >
-              <span style={{ display: 'block', width: 28, height: 1, background: G }} />
-              <span className="text-[11px] tracking-[0.3em] uppercase"
-                style={{ fontFamily: "'DM Sans', sans-serif", color: '#D4952A' }}>
-                Only Plenuss Consultoria
-              </span>
-            </motion.div>
+        {/* Ambient glow behind where team will be */}
+        <div style={{
+          position: 'absolute',
+          top: '10%', right: '5%',
+          width: '75%', height: '80%',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(30,50,130,0.45) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+        }} />
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        {/* Gold floor glow */}
+        <div style={{
+          position: 'absolute',
+          bottom: 0, left: '10%', right: 0,
+          height: '30%',
+          background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(212,149,42,0.18) 0%, transparent 70%)',
+          filter: 'blur(20px)',
+        }} />
+
+        {/* Team photo — PNG with alpha channel */}
+        <img
+          src="/team/8.png"
+          alt="Equipe Only Plenuss"
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            height: '100%',
+            width: 'auto',
+            maxWidth: 'none',
+            objectFit: 'contain',
+            objectPosition: 'bottom center',
+            filter: 'saturate(1.05) contrast(1.02) brightness(1.02) drop-shadow(0 0 40px rgba(212,149,42,0.15))',
+          }}
+        />
+
+        {/* Fade left edge so image blends into content */}
+        <div style={{
+          position: 'absolute',
+          top: 0, left: 0, bottom: 0,
+          width: '35%',
+          background: 'linear-gradient(to right, #06070D 0%, rgba(6,7,13,0.5) 60%, transparent 100%)',
+          pointerEvents: 'none',
+        }} />
+
+        {/* Fade bottom */}
+        <div style={{
+          position: 'absolute',
+          bottom: 0, left: 0, right: 0,
+          height: '12%',
+          background: 'linear-gradient(to top, #06070D 0%, transparent 100%)',
+          pointerEvents: 'none',
+        }} />
+      </div>
+
+      {/* ── LEFT: Text content ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-32 pb-20">
+        <div className="max-w-[52%]">
+
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
+            className="flex items-center gap-3 mb-7"
+          >
+            <span style={{ width: 24, height: 1.5, background: G, display: 'block', borderRadius: 2 }} />
+            <span style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: '0.65rem',
+              letterSpacing: '0.32em',
+              textTransform: 'uppercase',
+              color: '#D4952A',
+              fontWeight: 600,
+            }}>
+              Treinamentos Corporativos NR-01
+            </span>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: 'clamp(2.2rem, 4.2vw, 3.75rem)',
+              lineHeight: 1.1,
+              fontWeight: 900,
+              letterSpacing: '-0.02em',
+              color: '#FFFFFF',
+              textTransform: 'uppercase',
+            }}
+          >
+            Capacite sua equipe<br />
+            e conquiste a{' '}
+            <span style={{
+              background: G,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
+              conformidade
+            </span>
+            <br />com a NR-01.
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.42, duration: 0.55 }}
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: '0.95rem',
+              color: 'rgba(255,255,255,0.75)',
+              lineHeight: 1.7,
+              maxWidth: 420,
+              marginTop: '1.25rem',
+              fontWeight: 400,
+            }}
+          >
+            Um programa completo para proteger seus colaboradores
+            e manter sua empresa em conformidade com a legislação
+            trabalhista vigente.
+          </motion.p>
+
+          {/* Checklist */}
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.55, duration: 0.5 }}
+            style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}
+          >
+            {beneficios.map((b, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 + i * 0.07, duration: 0.35 }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}
+              >
+                <CheckCircle size={16} color="#D4952A" weight="fill" style={{ flexShrink: 0, marginTop: 3 }} />
+                <span style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: '0.82rem',
+                  color: 'rgba(255,255,255,0.8)',
+                  fontWeight: 400,
+                }}>{b}</span>
+              </motion.li>
+            ))}
+          </motion.ul>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.88, duration: 0.5 }}
+            style={{ marginTop: '2.25rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}
+          >
+            <a
+              href="#precos"
+              onClick={e => { e.preventDefault(); document.querySelector('#precos')?.scrollIntoView({ behavior: 'smooth' }); }}
+              className="group"
               style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '1rem 2.25rem',
+                background: G,
+                color: '#06070D',
                 fontFamily: "'Montserrat', sans-serif",
-                fontSize: 'clamp(2.4rem, 5vw, 4rem)',
-                lineHeight: 1.15,
-                color: '#FAFAFA',
+                fontSize: '0.75rem',
                 fontWeight: 800,
-                letterSpacing: '-0.02em',
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                borderRadius: '2px',
+                boxShadow: '0 0 40px rgba(212,149,42,0.4), 0 4px 20px rgba(0,0,0,0.5)',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.background = GH;
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 55px rgba(212,149,42,0.6), 0 4px 24px rgba(0,0,0,0.5)';
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.background = G;
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 40px rgba(212,149,42,0.4), 0 4px 20px rgba(0,0,0,0.5)';
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
               }}
             >
-              Capacite sua equipe e{' '}
-              <em style={{
-                fontStyle: 'italic',
-                background: G,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>
-                conquiste a conformidade
-              </em>{' '}
-              com a NR-01
-            </motion.h1>
+              Quero me Matricular
+              <ArrowRight size={14} />
+            </a>
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="mt-6 text-base leading-loose max-w-lg"
-              style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.9)', fontWeight: 300 }}
+            <a
+              href="#conteudo"
+              onClick={e => { e.preventDefault(); document.querySelector('#conteudo')?.scrollIntoView({ behavior: 'smooth' }); }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '1rem 2rem',
+                border: '1px solid rgba(212,149,42,0.35)',
+                color: 'rgba(212,149,42,0.9)',
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                borderRadius: '2px',
+                background: 'rgba(212,149,42,0.04)',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = '#D4952A';
+                (e.currentTarget as HTMLElement).style.background = 'rgba(212,149,42,0.10)';
+                (e.currentTarget as HTMLElement).style.color = '#F0C040';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,149,42,0.35)';
+                (e.currentTarget as HTMLElement).style.background = 'rgba(212,149,42,0.04)';
+                (e.currentTarget as HTMLElement).style.color = 'rgba(212,149,42,0.9)';
+              }}
             >
-              Faça parte de um seleto grupo de empresas que protege seus
-              colaboradores e se mantém em conformidade com a legislação
-              trabalhista — com a assessoria de quem entende do assunto.
-            </motion.p>
+              Ver Conteúdo
+            </a>
+          </motion.div>
 
-            {/* Checklist */}
-            <motion.ul
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="mt-8 flex flex-col gap-3"
-            >
-              {beneficios.map((b, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.65 + i * 0.08, duration: 0.4 }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle size={18} color="#D4952A" weight="fill" className="flex-shrink-0 mt-0.5" />
-                  <span className="text-sm"
-                    style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(180,185,220,0.7)', fontWeight: 300 }}>
-                    {b}
-                  </span>
-                </motion.li>
-              ))}
-            </motion.ul>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href="#precos"
-                onClick={e => { e.preventDefault(); document.querySelector('#precos')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold tracking-wider uppercase transition-all duration-200 group"
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  background: G,
-                  color: '#07080E',
-                  borderRadius: '4px',
-                  boxShadow: '0 0 30px rgba(212,149,42,0.35), 0 4px 16px rgba(0,0,0,0.4)',
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.background = GH;
-                  (e.currentTarget as HTMLElement).style.boxShadow = '0 0 40px rgba(212,149,42,0.5), 0 4px 20px rgba(0,0,0,0.4)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.background = G;
-                  (e.currentTarget as HTMLElement).style.boxShadow = '0 0 30px rgba(212,149,42,0.35), 0 4px 16px rgba(0,0,0,0.4)';
-                }}
-              >
-                Quero me Matricular
-                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#conteudo"
-                onClick={e => { e.preventDefault(); document.querySelector('#conteudo')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium tracking-wider uppercase transition-all duration-200"
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  border: '1px solid rgba(212,149,42,0.4)',
-                  color: 'rgba(212,149,42,0.85)',
-                  borderRadius: '4px',
-                  background: 'rgba(212,149,42,0.04)',
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = '#D4952A';
-                  (e.currentTarget as HTMLElement).style.color = '#F0C040';
-                  (e.currentTarget as HTMLElement).style.background = 'rgba(212,149,42,0.10)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,149,42,0.4)';
-                  (e.currentTarget as HTMLElement).style.color = 'rgba(212,149,42,0.85)';
-                  (e.currentTarget as HTMLElement).style.background = 'rgba(212,149,42,0.04)';
-                }}
-              >
-                Ver conteúdo
-              </a>
-            </motion.div>
-
-            {/* Stats bar */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.1, duration: 0.6 }}
-              className="mt-10 flex items-center gap-6 flex-wrap"
-              style={{ borderTop: '1px solid rgba(212,149,42,0.15)', paddingTop: 20 }}
-            >
-              {[
-                { num: '6+', label: 'Cursos' },
-                { num: '6', label: 'Instrutores' },
-                { num: '100%', label: 'Online' },
-                { num: 'NR-01', label: 'Certificado' },
-              ].map((s, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span style={{
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontSize: '1.1rem', fontWeight: 700,
-                    background: G, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                  }}>{s.num}</span>
-                  <span className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.95)' }}>{s.label}</span>
-                  {i < 3 && <span style={{ marginLeft: 12, color: 'rgba(212,149,42,0.2)', fontSize: 18 }}>·</span>}
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* RIGHT — instructor photo area */}
+          {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden lg:block"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.05, duration: 0.5 }}
+            style={{
+              marginTop: '2.5rem',
+              paddingTop: '1.5rem',
+              borderTop: '1px solid rgba(212,149,42,0.12)',
+              display: 'flex',
+              gap: '2rem',
+              flexWrap: 'wrap',
+            }}
           >
-            <div className="relative mx-auto" style={{ maxWidth: 460 }}>
-              {/* Corner accents */}
-              <div className="absolute -top-4 -left-4 z-10 pointer-events-none" style={{
-                width: 80, height: 80,
-                borderTop: '2px solid transparent',
-                borderLeft: '2px solid transparent',
-                backgroundImage: `${G}, ${G}`,
-                backgroundOrigin: 'border-box',
-                backgroundClip: 'border-box',
-                WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
-                WebkitMaskComposite: 'destination-out',
-                maskComposite: 'exclude',
-              }} />
-              {/* Simpler corner accents */}
-              <div className="absolute -top-3 -left-3 z-10 pointer-events-none" style={{
-                width: 60, height: 2,
-                background: G,
-                opacity: 0.8,
-              }} />
-              <div className="absolute -top-3 -left-3 z-10 pointer-events-none" style={{
-                width: 2, height: 60,
-                background: G,
-                opacity: 0.8,
-              }} />
-              <div className="absolute -bottom-3 -right-3 z-10 pointer-events-none" style={{
-                width: 60, height: 2,
-                background: G,
-                opacity: 0.8,
-              }} />
-              <div className="absolute -bottom-3 -right-3 z-10 pointer-events-none" style={{
-                width: 2, height: 60,
-                background: G,
-                right: -3, bottom: -3,
-                opacity: 0.8,
-              }} />
-
-              {/* Photo container */}
-              <div className="relative overflow-hidden" style={{
-                borderRadius: '4px',
-                border: '1px solid rgba(212,149,42,0.25)',
-                aspectRatio: '4/5',
-                background: 'linear-gradient(160deg, #0F1130 0%, #07080E 100%)',
-                boxShadow: '0 0 60px rgba(212,149,42,0.12), inset 0 0 60px rgba(20,25,70,0.5)',
-              }}>
-                {/* Team photo */}
-                <img
-                  src="/team/equipe.jpg"
-                  alt="Equipe Only Plenuss"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{
-                    filter: 'saturate(0.95) contrast(1.05)',
-                  }}
-                />
-
-                {/* Dark overlay for better badge contrast */}
-                <div className="absolute inset-0 pointer-events-none" style={{
-                  background: 'linear-gradient(180deg, rgba(7,8,14,0.15) 0%, rgba(7,8,14,0.35) 60%, rgba(7,8,14,0.95) 100%)',
-                }} />
-
-                {/* Gold glow overlay */}
-                <div className="absolute inset-0 pointer-events-none" style={{
-                  background: 'radial-gradient(ellipse 80% 60% at 50% 30%, rgba(212,149,42,0.15) 0%, transparent 70%)',
-                  mixBlendMode: 'overlay',
-                }} />
-
-                {/* Info badge */}
-                <div className="absolute bottom-6 left-6 right-6 p-4" style={{
-                  background: 'rgba(7,8,14,0.85)',
-                  backdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(212,149,42,0.25)',
-                  borderRadius: '4px',
-                }}>
-                  <div className="text-xs tracking-widest uppercase mb-1"
-                    style={{ fontFamily: "'DM Sans', sans-serif", color: '#D4952A' }}>
-                    Nossa Equipe
-                  </div>
-                  <div style={{
-                    fontFamily: "'Montserrat', sans-serif", color: '#FAFAFA',
-                    fontSize: '1rem', fontWeight: 600,
-                  }}>Especialistas em NR-01</div>
-                  <div className="text-xs mt-0.5"
-                    style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.85)' }}>
-                    Instrutores certificados · Décadas de experiência
-                  </div>
-                </div>
+            {[
+              { num: '6+', label: 'Cursos' },
+              { num: '6', label: 'Instrutores' },
+              { num: '100%', label: 'Online' },
+              { num: 'NR-01', label: 'Certificado' },
+            ].map((s, i) => (
+              <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
+                <span style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: '1.3rem',
+                  fontWeight: 800,
+                  background: G,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  lineHeight: 1,
+                }}>{s.num}</span>
+                <span style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: '0.65rem',
+                  color: 'rgba(255,255,255,0.5)',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  fontWeight: 500,
+                }}>{s.label}</span>
               </div>
-            </div>
+            ))}
           </motion.div>
         </div>
       </div>
@@ -335,12 +364,12 @@ export default function OPHero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-          style={{ width: 1, height: 40, background: 'linear-gradient(to bottom, transparent, rgba(212,149,42,0.5))' }}
+          transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
+          style={{ width: 1, height: 36, background: 'linear-gradient(to bottom, transparent, rgba(212,149,42,0.45))' }}
         />
       </motion.div>
     </section>
