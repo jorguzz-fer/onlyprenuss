@@ -107,7 +107,7 @@ export default function OPHero() {
           alt="Equipe Only Plenuss"
           style={{
             position: 'absolute',
-            bottom: 0,
+            bottom: '-130px',
             left: '50%',
             transform: 'translateX(-50%)',
             height: '100%',
