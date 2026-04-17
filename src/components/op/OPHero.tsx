@@ -283,47 +283,25 @@ export default function OPHero() {
                 background: 'linear-gradient(160deg, #0F1130 0%, #07080E 100%)',
                 boxShadow: '0 0 60px rgba(212,149,42,0.12), inset 0 0 60px rgba(20,25,70,0.5)',
               }}>
-                {/* Glow circles inside */}
-                <div style={{
-                  position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)',
-                  width: 200, height: 200, borderRadius: '50%',
-                  background: 'radial-gradient(circle, rgba(212,149,42,0.12) 0%, transparent 70%)',
-                  pointerEvents: 'none',
+                {/* Team photo */}
+                <img
+                  src="/team/equipe.jpg"
+                  alt="Equipe Only Plenuss"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{
+                    filter: 'saturate(0.95) contrast(1.05)',
+                  }}
+                />
+
+                {/* Dark overlay for better badge contrast */}
+                <div className="absolute inset-0 pointer-events-none" style={{
+                  background: 'linear-gradient(180deg, rgba(7,8,14,0.15) 0%, rgba(7,8,14,0.35) 60%, rgba(7,8,14,0.95) 100%)',
                 }} />
 
-                {/* Geometric gold shape */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                  <div style={{ position: 'relative', width: 120, height: 120 }}>
-                    <div style={{
-                      position: 'absolute', inset: 0,
-                      border: '1px solid rgba(212,149,42,0.25)',
-                      transform: 'rotate(45deg)', borderRadius: '4px',
-                    }} />
-                    <div style={{
-                      position: 'absolute', inset: 20,
-                      border: '1px solid rgba(212,149,42,0.12)',
-                      transform: 'rotate(45deg)', borderRadius: '4px',
-                    }} />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span style={{
-                        fontFamily: "'Montserrat', sans-serif",
-                        fontSize: '2rem',
-                        background: G, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text', fontWeight: 700,
-                      }}>OP</span>
-                    </div>
-                  </div>
-                  <span className="text-xs tracking-[0.2em] uppercase text-center px-8" style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    color: 'rgba(212,149,42,0.2)',
-                  }}>
-                    Adicione a foto do<br />instrutor principal aqui
-                  </span>
-                </div>
-
-                {/* Bottom gradient */}
-                <div className="absolute bottom-0 left-0 right-0 h-2/5" style={{
-                  background: 'linear-gradient(to top, #07080E 0%, rgba(7,8,14,0.7) 60%, transparent 100%)',
+                {/* Gold glow overlay */}
+                <div className="absolute inset-0 pointer-events-none" style={{
+                  background: 'radial-gradient(ellipse 80% 60% at 50% 30%, rgba(212,149,42,0.15) 0%, transparent 70%)',
+                  mixBlendMode: 'overlay',
                 }} />
 
                 {/* Info badge */}
@@ -335,15 +313,15 @@ export default function OPHero() {
                 }}>
                   <div className="text-xs tracking-widest uppercase mb-1"
                     style={{ fontFamily: "'DM Sans', sans-serif", color: '#D4952A' }}>
-                    Instrutora Destaque
+                    Nossa Equipe
                   </div>
                   <div style={{
                     fontFamily: "'Montserrat', sans-serif", color: '#FAFAFA',
                     fontSize: '1rem', fontWeight: 600,
-                  }}>Katia Conte</div>
+                  }}>Especialistas em NR-01</div>
                   <div className="text-xs mt-0.5"
                     style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.85)' }}>
-                    Especialista NR-01 · Ciências Contábeis
+                    Instrutores certificados · Décadas de experiência
                   </div>
                 </div>
               </div>
