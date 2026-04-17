@@ -46,10 +46,10 @@ export default function OPHeader() {
           {/* Logo */}
           <a href="#hero" onClick={e => handleNavClick(e, '#hero')} className="group">
             <img
-              src="/logo/logo-only/logo.jpg"
+              src="/logo/logo-only/logo-v2.png"
               alt="Only Plenuss Consultoria"
               style={{
-                height: '48px',
+                height: '60px',
                 width: 'auto',
                 objectFit: 'contain',
                 transition: 'opacity 0.2s ease',
